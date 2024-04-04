@@ -1,6 +1,6 @@
-let notas = [];
+let notas = []; // array que guarda las notas 
 
-function notasAgregar(){
+function notasAgregar(){  // Agrega la nota al array y las muestra en el DOM 
   const NuevaNota = prompt("Ingrese Una Nota ");
   if (NuevaNota !== null && NuevaNota.trim() !== ""){
     notas.push(NuevaNota);
@@ -11,9 +11,9 @@ function notasAgregar(){
     alert("El usuario no ingreso ninguna Nota");
   }
 }
-const ContenedordeNotas = document.getElementById("ContenedordeNotas");
+const ContenedordeNotas = document.getElementById("ContenedordeNotas"); // Dom que contiene notas
 
-function mostrarNotas(){
+function mostrarNotas(){ // funcion que muestra las Notas del array
   ContenedordeNotas.innerHTML= "";
   notas.forEach((nota) => {
     const ElementoNota = document.createElement("div");
@@ -43,7 +43,7 @@ function mostrarNotas(){
   }) 
 }
 
-function editarNota(nota){
+function editarNota(nota){  // Edita la nota existente 
   const indiceNota = notas.indexOf(nota);
   if (indiceNota !== -1){
     const nuevaNota = prompt("Ingresa la Nueva Nota");
@@ -60,7 +60,7 @@ function editarNota(nota){
   }
 }
 
-function eliminarNota(nota){
+function eliminarNota(nota){ //Eliminar la nota existente 
   const indiceNota = notas.indexOf(nota);
  if (indiceNota !== -1){
   notas.splice(indiceNota, 1 );
@@ -73,8 +73,8 @@ else{
 }
 
 function guardarNotasEnLocalStorage(){
-  const notasJSON = JSON.stringify(notas);
-  localStorage.setItem("notas",notasJSON)
+  const notasJSON = JSON.stringify(notas); // se convierte el array notas a un string JSON
+  localStorage.setItem("notas",notasJSON) // se guarda el string JSON en localstorage del navegador 
 }
 
 function cargarNotasDesdeLocalStorage(){
@@ -85,7 +85,7 @@ function cargarNotasDesdeLocalStorage(){
   }
 }
 
-window.addEventListener("load", cargarNotasDesdeLocalStorage);
+window.addEventListener("load", cargarNotasDesdeLocalStorage); // Cargar las notas del LocalStorage al array.
 
-const botonAgregarNota= document.getElementById("botonAgregarNota");
+const botonAgregarNota= document.getElementById("botonAgregarNota"); // Se agrega el boton de añadir nota.
 botonAgregarNota.addEventListener("click", notasAgregar)

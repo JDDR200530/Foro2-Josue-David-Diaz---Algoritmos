@@ -6,7 +6,7 @@ body {
   .nota {
    background-color: #837ADA;
     margin-bottom: 15px;
-    padding: 5px;
+    padding: 10px;
     border: 1px solid #18d14c;
     border-radius: 5px;
     color: #ddd;
@@ -33,10 +33,13 @@ body {
     border: none;
     padding: 5px 10px;
     margin-left: 10px;
+    float:right;
   }
   
 
-  button{
-    background-color: #18d14c;
-    margin: bottom 0;
+  .boton-añadir
+  {   background-color: #18d14c;
+    padding: 10px 600px;
+    font-size: 15px;
+    font-style: italic;
   }
